@@ -3,7 +3,11 @@ package org.example;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class Google_Price_Cal_Test {
@@ -15,14 +19,36 @@ public class Google_Price_Cal_Test {
     String No_of_Instance;
     String Time_Taken;
     String Cost_of_USD;
+
+
+    @BeforeClass
+    @Parameters({"browser", "Url"})
+    public void openbrowser(String browser, String Url)
+    {
+        if(browser.equalsIgnoreCase("chrome"))
+        {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+            obj = new Google_Price_Calculate_App(driver);
+        }
+        else if(browser.equalsIgnoreCase("firefox"))
+        {
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+            obj = new Google_Price_Calculate_App(driver);
+        }
+        driver.get(Url);
+    }
+
     @Test
-    public void checkInformationInVmClassString() throws InterruptedException {
+    public void checkInformationInVmClassString() throws InterruptedException
+    {
 
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        obj = new Google_Price_Calculate_App(driver);
-
-        driver.get("https://cloud.google.com/products/calculator");
+//        WebDriverManager.chromedriver().setup();
+//        driver = new ChromeDriver();
+//        obj = new Google_Price_Calculate_App(driver);
+//
+//        driver.get("https://cloud.google.com/products/calculator");
 
         driver.manage().window().maximize();
         obj.Number_Of_Instances_Field("4");
@@ -55,6 +81,11 @@ public class Google_Price_Cal_Test {
         Assert.assertEquals(No_of_Instance, "Instance type: n1-standard-8\n"+ "Committed Use Discount applied");
         Assert.assertEquals(Time_Taken, "Commitment term: 1 Year");
         Assert.assertEquals(Cost_of_USD, "Total Estimated Cost: USD 1,081.20 per 1 month");
+    }
+    @AfterClass
+    public void driverclode()
+    {
+        driver.close();
     }
 
 }
