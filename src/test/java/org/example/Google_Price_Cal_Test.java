@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 public class Google_Price_Cal_Test {
     WebDriver driver;
-    Google_Price_Calculate_App obj;
+    Google_cal obj;
     String VM_Of_Class;
     String region;
     String S_S_D;
@@ -29,13 +29,13 @@ public class Google_Price_Cal_Test {
         {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
-            obj = new Google_Price_Calculate_App(driver);
+            obj = new Google_cal(driver);
         }
         else if(browser.equalsIgnoreCase("firefox"))
         {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
-            obj = new Google_Price_Calculate_App(driver);
+            obj = new Google_cal(driver);
         }
         driver.get(Url);
     }
@@ -43,12 +43,6 @@ public class Google_Price_Cal_Test {
     @Test
     public void checkInformationInVmClassString() throws InterruptedException
     {
-
-//        WebDriverManager.chromedriver().setup();
-//        driver = new ChromeDriver();
-//        obj = new Google_Price_Calculate_App(driver);
-//
-//        driver.get("https://cloud.google.com/products/calculator");
 
         driver.manage().window().maximize();
         obj.Number_Of_Instances_Field("4");

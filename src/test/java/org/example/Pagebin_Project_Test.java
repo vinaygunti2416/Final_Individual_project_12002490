@@ -17,7 +17,7 @@ public class Pagebin_Project_Test {
         driver.get("https://pastebin.com/");
         driver.manage().window().maximize();
 
-        Pagebin_Project page = new Pagebin_Project(driver);
+        Page_bin page = new Page_bin(driver);
         page.NewPaste();
         Thread.sleep(2000);
         JavascriptExecutor js2 = (JavascriptExecutor) driver;
