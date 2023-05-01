@@ -13,59 +13,34 @@ public class Google_Price_Calculate_App
         this.driver=driver;
         PageFactory.initElements(driver,this);
     }
-    @FindBy(className="devsite-search-form")
-    WebElement searchLogo;
-    @FindBy(xpath="//input[@class='devsite-search-field devsite-search-query']")
-    WebElement googleSearch;
-    @FindBy(xpath="//body/section[@class='devsite-wrapper']/section[@id='gc-wrapper']/main[@role='main']/devsite-content/article[@class='devsite-article']/article[@class='devsite-article-inner']/div[@class='devsite-article-body']/devsite-catalog[@body-tag-name='devsite-cse']/div[@class='catalog-container']/div[@class='catalog-main']/div[@class='catalog-results-container']/devsite-cse[@name='results']/devsite-analytics-scope[@category='Site-Wide Custom Events']/div[@class='devsite-cse-results']/div/div[@id='___gcse_0']/div[@class='gsc-control-cse gsc-control-cse-en']/div[@class='gsc-control-wrapper-cse']/div[@class='gsc-results-wrapper-nooverlay gsc-results-wrapper-visible']/div[@class='gsc-wrapper']/div[@class='gsc-resultsbox-visible']/div[@class='gsc-resultsRoot gsc-tabData gsc-tabdActive']/div[@class='gsc-results gsc-webResult']/div[@class='gsc-expansionArea']/div[1]/div[1]/div[1]/div[1]/a[1]")
-    WebElement switchToCalculator;
-    @FindBy(xpath="//iframe[contains(@name,'goog_')]")
-    WebElement newFrame;
+
+//    @FindBy(className="devsite-search-form")
+//    WebElement Search_L;
+//    @FindBy(xpath="//body/section[@class='devsite-wrapper']/section[@id='gc-wrapper']/main[@role='main']/devsite-content/article[@class='devsite-article']/article[@class='devsite-article-inner']/div[@class='devsite-article-body']/devsite-catalog[@body-tag-name='devsite-cse']/div[@class='catalog-container']/div[@class='catalog-main']/div[@class='catalog-results-container']/devsite-cse[@name='results']/devsite-analytics-scope[@category='Site-Wide Custom Events']/div[@class='devsite-cse-results']/div/div[@id='___gcse_0']/div[@class='gsc-control-cse gsc-control-cse-en']/div[@class='gsc-control-wrapper-cse']/div[@class='gsc-results-wrapper-nooverlay gsc-results-wrapper-visible']/div[@class='gsc-wrapper']/div[@class='gsc-resultsbox-visible']/div[@class='gsc-resultsRoot gsc-tabData gsc-tabdActive']/div[@class='gsc-results gsc-webResult']/div[@class='gsc-expansionArea']/div[1]/div[1]/div[1]/div[1]/a[1]")
+//    WebElement switchToCalculator;
+//    @FindBy(xpath="//input[@class='devsite-search-field devsite-search-query']")
+//    WebElement googleSearch;
+//    public void goToCloudCalculatorPage(String searchText) {
+//        Search_L.click();
+//        googleSearch.click();
+//        googleSearch.sendKeys(searchText);
+//        googleSearch.sendKeys(Keys.ENTER);
+//        switchToCalculator.click();
+//    }
     @FindBy(xpath ="/html[1]/body[1]/md-content[1]/md-card[1]/div[1]/md-card-content[1]/div[2]/div[1]/md-card[1]/md-card-content[1]/div[1]/div[1]/form[1]/div[1]/div[1]/md-input-container[1]/input[1]")
     WebElement instanceField;
-    @FindBy(xpath = "//button[@class='devsite-snackbar-action']")
-    WebElement cookiesOkBtn;
-
-
-
-
-
-
-
-    @FindBy(xpath="//div[normalize-space()='Provisioning model: Regular']")
-    WebElement vmClassData;
-    @FindBy(xpath="//div[normalize-space()='Region: Frankfurt']")
-    WebElement location;
-    @FindBy(xpath="//div[normalize-space()='Commitment term: 1 Year']")
-    WebElement commitedTime;
-    @FindBy(xpath="//div[contains (text(),'Instance type: n1-standard-8')]")
-    WebElement instanceData;
-    @FindBy(xpath="//div[contains (text(),'Local SSD: 2x375 GiB')]")
-    WebElement ssdData;
-    @FindBy(xpath="//b[contains(text(),'Total Estimated Cost:')]")
-    WebElement amount;
-
-
-
-//    public void openGcpPage(String url){
-//        driver.get(url);
-//
-//    }
-    public void goToCloudCalculatorPage(String searchText) {
-        searchLogo.click();
-        googleSearch.click();
-        googleSearch.sendKeys(searchText);
-        googleSearch.sendKeys(Keys.ENTER);
-        switchToCalculator.click();
-    }
-    public void NumberOfInstancesField(String NumberOfInstances) {
+    @FindBy(xpath="//iframe[contains(@name,'goog_')]")
+    WebElement newFrame;
+    public void Number_Of_Instances_Field(String NumberOfInstances) {
         driver.switchTo().frame(newFrame);
         //frame inside frame
         driver.switchTo().frame("myFrame");
         instanceField.sendKeys(NumberOfInstances);
     }
-    public void ManageCookie() throws InterruptedException {
 
+    @FindBy(xpath = "//button[@class='devsite-snackbar-action']")
+    WebElement cookiesOkBtn;
+    public void ManageCookie() throws InterruptedException {
         if (cookiesOkBtn.isDisplayed()) {
             cookiesOkBtn.click();
             Thread.sleep(1000);
@@ -77,11 +52,11 @@ public class Google_Price_Calculate_App
 
 //    class="md-text ng-binding"
     @FindBy(xpath="//md-option[@id='select_option_212']")
-    WebElement seriesType;
+    WebElement Series_Type;
     public void selectSeries() throws InterruptedException {
         series.click();
         Thread.sleep(1000);
-        seriesType.click();
+        Series_Type.click();
     }
     //first select series then MachineType
 
@@ -103,7 +78,7 @@ public class Google_Price_Calculate_App
     }
     @FindBy(xpath="//md-select[@placeholder='Number of GPUs']")
     WebElement numberOfGpusDropBox;
-    @FindBy(xpath ="//md-option[@id='select_option_496']")
+    @FindBy(xpath ="//md-option[@id='select_option_497']")
     WebElement numberOfGpus;
     @FindBy(xpath="//md-option[@value='NVIDIA_TESLA_V100']")
     WebElement gpusType;
@@ -130,7 +105,7 @@ public class Google_Price_Calculate_App
     }
     @FindBy(xpath="//md-select[@placeholder='Datacenter location']")
     WebElement dataCenterLocationDropBox;
-    @FindBy(xpath="//md-option[@id='select_option_252']//div[@class='md-text ng-binding'][normalize-space()='Frankfurt (europe-west3)']")
+    @FindBy(xpath="//md-option[@id='select_option_253']//div[@class='md-text ng-binding'][normalize-space()='Frankfurt (europe-west3)']")
     WebElement dataCenterLocation;
     public void selectDataCenterLocation() throws InterruptedException {
         dataCenterLocationDropBox.click();
@@ -139,7 +114,7 @@ public class Google_Price_Calculate_App
     }
     @FindBy(xpath="//md-select[@placeholder='Committed usage']")
     WebElement commitedUageDropBox;
-    @FindBy(xpath="//md-option[@id='select_option_133']")
+    @FindBy(xpath="//md-option[@id='select_option_134']")
     WebElement commitedUsageOneYear;
     public void selectCommittedUsage() throws InterruptedException {
         commitedUageDropBox.click();
@@ -148,29 +123,50 @@ public class Google_Price_Calculate_App
     }
     @FindBy(xpath="//form[@name='ComputeEngineForm']//button[@type='button'][normalize-space()='Add to Estimate']")
     WebElement addToEstimateButton;
-    public void pushAddToEstimate() {
+    public void pushAddToEstimate()
+    {
         addToEstimateButton.click();
     }
-    public WebElement getVmClassData(){
-        WebElement vmData=vmClassData;
+    @FindBy(xpath="//div[normalize-space()='Provisioning model: Regular']")
+    WebElement vmClassData;
+
+    public WebElement getVmClassData()
+    {
+        WebElement vmData = vmClassData;
         return vmData;
     }
+    @FindBy(xpath="//div[normalize-space()='Region: Frankfurt']")
+    WebElement location;
     public WebElement getLocation(){
         WebElement loc=location;
         return loc;
     }
+
+
+    @FindBy(xpath="//div[normalize-space()='Commitment term: 1 Year']")
+    WebElement commitedTime;
+
     public WebElement getCommitment(){
         WebElement time=commitedTime;
         return time;
     }
+    @FindBy(xpath="//div[contains (text(),'Instance type: n1-standard-8')]")
+    WebElement instanceData;
+
     public WebElement getInstanceType(){
         WebElement instance=instanceData;
         return instance;
     }
-    public WebElement getSsdData(){
+    @FindBy(xpath="//div[contains (text(),'Local SSD: 2x375 GiB')]")
+    WebElement ssdData;
+
+    public WebElement getSsdData()
+    {
         WebElement ssd=ssdData;
         return ssd;
     }
+    @FindBy(xpath="//b[contains(text(),'Total Estimated Cost:')]")
+    WebElement amount;
     public WebElement getCost(){
         WebElement price=amount;
         return price;

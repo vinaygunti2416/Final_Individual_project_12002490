@@ -14,28 +14,30 @@ public class Pagebin_Project {
 
     By button = By.xpath("//button[text() = 'Create New Paste']");
 
-    public Pagebin_Project(WebDriver driver) {
+    public Pagebin_Project(WebDriver driver)
+    {
         this.driver = driver;
     }
-
-    public void NewPaste(){
+    public void NewPaste()
+    {
         driver.findElement(code).sendKeys("Hello from WebDriver");
     }
-
-    public void paste_Expiration()  {
+    public void paste_Expiration()
+    {
         driver.findElement(paste_expire).click();
     }
-    public void expireTime(){
+    public void expireTime()
+    {
         driver.findElement(expire).click();
     }
     public void pasteName()
     {
         driver.findElement(title).sendKeys("helloweb");
     }
-    public void Submit(){
+    public void Submit()
+    {
         driver.findElement(button).click();
     }
-
 }
 
 
