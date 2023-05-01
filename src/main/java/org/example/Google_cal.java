@@ -13,20 +13,6 @@ public class Google_cal
         this.driver=driver;
         PageFactory.initElements(driver,this);
     }
-
-//    @FindBy(className="devsite-search-form")
-//    WebElement Search_L;
-//    @FindBy(xpath="//body/section[@class='devsite-wrapper']/section[@id='gc-wrapper']/main[@role='main']/devsite-content/article[@class='devsite-article']/article[@class='devsite-article-inner']/div[@class='devsite-article-body']/devsite-catalog[@body-tag-name='devsite-cse']/div[@class='catalog-container']/div[@class='catalog-main']/div[@class='catalog-results-container']/devsite-cse[@name='results']/devsite-analytics-scope[@category='Site-Wide Custom Events']/div[@class='devsite-cse-results']/div/div[@id='___gcse_0']/div[@class='gsc-control-cse gsc-control-cse-en']/div[@class='gsc-control-wrapper-cse']/div[@class='gsc-results-wrapper-nooverlay gsc-results-wrapper-visible']/div[@class='gsc-wrapper']/div[@class='gsc-resultsbox-visible']/div[@class='gsc-resultsRoot gsc-tabData gsc-tabdActive']/div[@class='gsc-results gsc-webResult']/div[@class='gsc-expansionArea']/div[1]/div[1]/div[1]/div[1]/a[1]")
-//    WebElement switchToCalculator;
-//    @FindBy(xpath="//input[@class='devsite-search-field devsite-search-query']")
-//    WebElement googleSearch;
-//    public void goToCloudCalculatorPage(String searchText) {
-//        Search_L.click();
-//        googleSearch.click();
-//        googleSearch.sendKeys(searchText);
-//        googleSearch.sendKeys(Keys.ENTER);
-//        switchToCalculator.click();
-//    }
     @FindBy(xpath ="/html[1]/body[1]/md-content[1]/md-card[1]/div[1]/md-card-content[1]/div[2]/div[1]/md-card[1]/md-card-content[1]/div[1]/div[1]/form[1]/div[1]/div[1]/md-input-container[1]/input[1]")
     WebElement instance_Field;
     @FindBy(xpath="//iframe[contains(@name,'goog_')]")

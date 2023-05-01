@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class Google_Cal {
+public class Google_Price_Cal_Test {
     WebDriver driver;
     Google_cal obj;
     String VM_Of_Class;
@@ -43,6 +43,8 @@ public class Google_Cal {
     @Test
     public void checkInformationInVmClassString() throws InterruptedException
     {
+
+
 
         driver.manage().window().maximize();
         obj.Number_Of_Instances_Field("4");

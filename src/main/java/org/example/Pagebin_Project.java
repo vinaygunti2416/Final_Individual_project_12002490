@@ -3,7 +3,7 @@ package org.example;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class Page_bin {
+public class Pagebin_Project {
     WebDriver driver;
     By code = By.id("postform-text");
     By paste_expire = By.id("select2-postform-expiration-container");
@@ -14,7 +14,7 @@ public class Page_bin {
 
     By button = By.xpath("//button[text() = 'Create New Paste']");
 
-    public Page_bin(WebDriver driver)
+    public Pagebin_Project(WebDriver driver)
     {
         this.driver = driver;
     }

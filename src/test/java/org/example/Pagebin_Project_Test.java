@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class Page_Bin {
+public class Pagebin_Project_Test {
     WebDriver driver;
 
     @Test
@@ -17,7 +17,7 @@ public class Page_Bin {
         driver.get("https://pastebin.com/");
         driver.manage().window().maximize();
 
-        Page_bin page = new Page_bin(driver);
+        Pagebin_Project page = new Pagebin_Project(driver);
         page.NewPaste();
         Thread.sleep(2000);
         JavascriptExecutor js2 = (JavascriptExecutor) driver;
