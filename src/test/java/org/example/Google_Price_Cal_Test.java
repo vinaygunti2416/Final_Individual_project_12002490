@@ -52,25 +52,25 @@ public class Google_Price_Cal_Test {
 
         driver.manage().window().maximize();
         obj.Number_Of_Instances_Field("4");
-        obj.selectSeries();
+        obj.Select_Series();
         Thread.sleep(5000);
-        obj.selectMachineType();
+        obj.Select_Machine_Type();
         Thread.sleep(5000);
-        obj.AddGpusCheckBox();
-        obj.selectTypeOfGpus();
-        obj.selectNumberOfGpus();
-        obj.selectLocalSsd();
-        obj.selectDataCenterLocation();
-        obj.selectCommittedUsage();
-        obj.pushAddToEstimate();
+        obj.Add_Gpus_CheckBox();
+        obj.Select_Type_Of_Gpus();
+        obj.Select_Number_Of_Gpus();
+        obj.Select_Local_s_s_d();
+        obj.Select_Data_Center_Location();
+        obj.Select_Committed_Usage();
+        obj.Push_Add_To_Estimate();
         //Data Store from Object
 
-        VM_Of_Class = obj.getVmClassData().getText();
-        region=obj.getLocation().getText();
-        S_S_D = obj.getSsdData().getText();
-        No_of_Instance = obj.getInstanceType().getText();
-        Time_Taken = obj.getCommitment().getText();
-        Cost_of_USD = obj.getCost().getText();
+        VM_Of_Class = obj.Get_Vm_Class_Data().getText();
+        region=obj.Get_Location().getText();
+        S_S_D = obj.Get_Ssd_Data().getText();
+        No_of_Instance = obj.Get_Instance_Type().getText();
+        Time_Taken = obj.Get_Commitment().getText();
+        Cost_of_USD = obj.Get_Cost().getText();
     }
     @Test
     public void check_Data_is_correct()

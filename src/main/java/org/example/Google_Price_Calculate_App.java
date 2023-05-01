@@ -28,21 +28,21 @@ public class Google_Price_Calculate_App
 //        switchToCalculator.click();
 //    }
     @FindBy(xpath ="/html[1]/body[1]/md-content[1]/md-card[1]/div[1]/md-card-content[1]/div[2]/div[1]/md-card[1]/md-card-content[1]/div[1]/div[1]/form[1]/div[1]/div[1]/md-input-container[1]/input[1]")
-    WebElement instanceField;
+    WebElement instance_Field;
     @FindBy(xpath="//iframe[contains(@name,'goog_')]")
-    WebElement newFrame;
+    WebElement new_Frame;
     public void Number_Of_Instances_Field(String NumberOfInstances) {
-        driver.switchTo().frame(newFrame);
+        driver.switchTo().frame(new_Frame);
         //frame inside frame
         driver.switchTo().frame("myFrame");
-        instanceField.sendKeys(NumberOfInstances);
+        instance_Field.sendKeys(NumberOfInstances);
     }
 
     @FindBy(xpath = "//button[@class='devsite-snackbar-action']")
-    WebElement cookiesOkBtn;
+    WebElement cookies_Ok_Btn;
     public void ManageCookie() throws InterruptedException {
-        if (cookiesOkBtn.isDisplayed()) {
-            cookiesOkBtn.click();
+        if (cookies_Ok_Btn.isDisplayed()) {
+            cookies_Ok_Btn.click();
             Thread.sleep(1000);
         }
     }
@@ -53,7 +53,7 @@ public class Google_Price_Calculate_App
 //    class="md-text ng-binding"
     @FindBy(xpath="//md-option[@id='select_option_212']")
     WebElement Series_Type;
-    public void selectSeries() throws InterruptedException {
+    public void Select_Series() throws InterruptedException {
         series.click();
         Thread.sleep(1000);
         Series_Type.click();
@@ -61,83 +61,85 @@ public class Google_Price_Calculate_App
     //first select series then MachineType
 
     @FindBy(xpath="//label[text()='Machine type']/parent::md-input-container")
-    WebElement machineTypeDropBox;
+    WebElement machine_Type_DropBox;
     @FindBy(xpath="//div[normalize-space()='n1-standard-8 (vCPUs: 8, RAM: 30GB)']")
     WebElement machineType;
-    public void selectMachineType() throws InterruptedException {
-        machineTypeDropBox.click();
+    public void Select_Machine_Type() throws InterruptedException {
+        machine_Type_DropBox.click();
         Thread.sleep(1000);
         machineType.click();
     }
     @FindBy(xpath="//md-checkbox[@aria-label='Add GPUs']")
-    WebElement gpusCheckBox;
+    WebElement gpus_Check_Box;
     @FindBy(xpath="//md-select[@placeholder='GPU type']")
-    WebElement gpuTypeDropBox;
-    public void AddGpusCheckBox() {
-        gpusCheckBox.click();
+    WebElement Gpu_Type_Drop_Box;
+    public void Add_Gpus_CheckBox()
+    {
+        gpus_Check_Box.click();
     }
     @FindBy(xpath="//md-select[@placeholder='Number of GPUs']")
-    WebElement numberOfGpusDropBox;
+    WebElement number_Of_Gpus_DropBox;
     @FindBy(xpath ="//md-option[@id='select_option_497']")
-    WebElement numberOfGpus;
+    WebElement number_Of_Gpus;
     @FindBy(xpath="//md-option[@value='NVIDIA_TESLA_V100']")
-    WebElement gpusType;
-    public void selectTypeOfGpus() throws InterruptedException {
-        gpuTypeDropBox.click();
+    WebElement gpus_Type;
+    public void Select_Type_Of_Gpus() throws InterruptedException {
+        Gpu_Type_Drop_Box.click();
         Thread.sleep(1000);
-        gpusType.click();
+        gpus_Type.click();
     }
-    public void selectNumberOfGpus() throws InterruptedException {
-        numberOfGpusDropBox.click();
+    public void Select_Number_Of_Gpus() throws InterruptedException {
+        number_Of_Gpus_DropBox.click();
         Thread.sleep(500);
-        numberOfGpus.click();
+        number_Of_Gpus.click();
     }
 
     @FindBy(xpath="//md-select[@placeholder='Local SSD']")
-    WebElement localSsdDropBox;
+    WebElement Local_Ssd_DropBox;
     @FindBy(xpath="//div[normalize-space()='2x375 GB']")
-    WebElement localSsdModel;
+    WebElement Local_Ssd_Model;
 
-    public void selectLocalSsd() throws InterruptedException {
-        localSsdDropBox.click();
+    public void Select_Local_s_s_d() throws InterruptedException {
+        Local_Ssd_DropBox.click();
         Thread.sleep(1000);
-        localSsdModel.click();
+        Local_Ssd_Model.click();
     }
     @FindBy(xpath="//md-select[@placeholder='Datacenter location']")
-    WebElement dataCenterLocationDropBox;
+    WebElement Data_Center_Location_Drop_Box;
     @FindBy(xpath="//md-option[@id='select_option_253']//div[@class='md-text ng-binding'][normalize-space()='Frankfurt (europe-west3)']")
-    WebElement dataCenterLocation;
-    public void selectDataCenterLocation() throws InterruptedException {
-        dataCenterLocationDropBox.click();
+    WebElement Data_Center_Location;
+    public void Select_Data_Center_Location() throws InterruptedException {
+        Data_Center_Location_Drop_Box.click();
         Thread.sleep(1000);
-        dataCenterLocation.click();
+        Data_Center_Location.click();
     }
     @FindBy(xpath="//md-select[@placeholder='Committed usage']")
-    WebElement commitedUageDropBox;
+    WebElement Commited_Uage_Drop_Box;
     @FindBy(xpath="//md-option[@id='select_option_134']")
-    WebElement commitedUsageOneYear;
-    public void selectCommittedUsage() throws InterruptedException {
-        commitedUageDropBox.click();
+    WebElement Commited_Usage_One_Year;
+    public void Select_Committed_Usage() throws InterruptedException {
+        Commited_Uage_Drop_Box.click();
         Thread.sleep(1000);
-        commitedUsageOneYear.click();
+        Commited_Usage_One_Year.click();
     }
     @FindBy(xpath="//form[@name='ComputeEngineForm']//button[@type='button'][normalize-space()='Add to Estimate']")
-    WebElement addToEstimateButton;
-    public void pushAddToEstimate()
+    WebElement Add_To_Estimate_Button;
+    public void Push_Add_To_Estimate()
     {
-        addToEstimateButton.click();
+        Add_To_Estimate_Button.click();
     }
     @FindBy(xpath="//div[normalize-space()='Provisioning model: Regular']")
-    WebElement vmClassData;
+    WebElement Vm_Class_Data;
 
-    public WebElement getVmClassData()
+    public WebElement Get_Vm_Class_Data()
     {
-        WebElement vmData = vmClassData;
+        WebElement vmData = Vm_Class_Data;
         return vmData;
     }
     @FindBy(xpath="//div[normalize-space()='Region: Frankfurt']")
     WebElement location;
-    public WebElement getLocation(){
+    public WebElement Get_Location()
+    {
         WebElement loc=location;
         return loc;
     }
@@ -146,28 +148,28 @@ public class Google_Price_Calculate_App
     @FindBy(xpath="//div[normalize-space()='Commitment term: 1 Year']")
     WebElement commitedTime;
 
-    public WebElement getCommitment(){
+    public WebElement Get_Commitment(){
         WebElement time=commitedTime;
         return time;
     }
     @FindBy(xpath="//div[contains (text(),'Instance type: n1-standard-8')]")
     WebElement instanceData;
 
-    public WebElement getInstanceType(){
+    public WebElement Get_Instance_Type(){
         WebElement instance=instanceData;
         return instance;
     }
     @FindBy(xpath="//div[contains (text(),'Local SSD: 2x375 GiB')]")
     WebElement ssdData;
 
-    public WebElement getSsdData()
+    public WebElement Get_Ssd_Data()
     {
         WebElement ssd=ssdData;
         return ssd;
     }
     @FindBy(xpath="//b[contains(text(),'Total Estimated Cost:')]")
     WebElement amount;
-    public WebElement getCost(){
+    public WebElement Get_Cost(){
         WebElement price=amount;
         return price;
     }
