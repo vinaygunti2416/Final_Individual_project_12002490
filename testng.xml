@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="C:/Users/Manjeet Sharma/IdeaProjects/Final_individual_Project_11904954_Lpu/src/test/java/org/example/Google_Price_Cal_Test.java"><classes><class name="org.example.Google_Price_Cal_Test"><methods><include name="checkInformationInVmClassString"/></methods></class></classes></test></suite>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/Manjeet Sharma/IdeaProjects/Final_individual_Project_11904954_Lpu/src/test/java/org/example/Google_Price_Cal_Test.java">
+        <classes><class name="org.example.Google_Price_Cal_Test">
+            <methods><include name="checkInformationInVmClassString"/>
+                <include name="check_Data_is_correct"/>
+            </methods>
+        </class>
+        </classes>
+    </test>
+</suite>
