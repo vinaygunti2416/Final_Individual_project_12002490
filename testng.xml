@@ -17,7 +17,7 @@
         <parameter name="browser" value="firefox"></parameter>
         <parameter name="Url" value="https://cloud.google.com/products/calculator"></parameter>
         <classes>
-            <class name="org.example.Google_Price_Cal_Test">
+            <class name="org.example.Google_Cal">
                 <methods><include name="checkInformationInVmClassString"/>
                     <include name="check_Data_is_correct"/>
                 </methods>

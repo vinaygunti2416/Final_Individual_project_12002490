@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class Pagebin_Project_Test {
+public class Page_Bin {
     WebDriver driver;
 
     @Test
